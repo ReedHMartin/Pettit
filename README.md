@@ -1,7 +1,7 @@
 # Pet-it
 Rate and comment on pets to adopt
 
-As developers, we wanted to create a Web App that will allow people to help give pets that aer up for adoption more exposure by voting and commenting on images of the pets.
+As developers, we wanted to create a Web App that will allow people to help give pets that are up fur adoption more exposure by voting and commenting on images of the pets.
 
 ## Repository and Deployed webpage
 
@@ -17,9 +17,9 @@ https://reedhmartin.github.io/Pettit/
 ## Usage
 
 > * Log in to the app with you username and password, or create a new account.
-> * Click left or right to scroll through a gallery of pets that are up for adoption.
-> * See 0 to 5 star ratings of the pets and other people's comments about them
-> * Give a 0 to 5 star rating of the pets and write your own comments about them.
+> * Click left or right to scroll through a gallery of profiles fur pets that are up fur adoption.
+> * See the percentage of thumbs-up vs thumbs-down fur the profiles and other people's comments about them
+> * Give a thumbs-up or thumbs-down rating of the pets and write your own comments about them.
 > * Click the link to be taken to the Petfinder.com website where you can adopt the selected pet.
 
 
@@ -46,7 +46,7 @@ We used Handlebars.js as the template engine.
 > * [Handlebars](https://handlebarsjs.com/)
 
 ### Database
-We used MySQL and the Sequelize ORM for the database.
+We used MySQL and the Sequelize ORM fur the database.
 > * [MySQL](https://www.mysql.com/)
 > * [Sequelize](https://sequelize.org/)
 
