@@ -6,7 +6,7 @@ As developers, we wanted to create a Web App that will allow people to help give
 ## Repository and Deployed webpage
 
 https://github.com/ReedHMartin/Pettit \
-https://reedhmartin.github.io/Pettit/ \
+https://reedhmartin.github.io/Pettit/
 
 
 ## Demo
@@ -16,8 +16,8 @@ https://reedhmartin.github.io/Pettit/ \
 
 ## Usage
 
-> * Log in to the app withe you username and password, or create a new account.
-> * Click left or right to scroll through a gallery of pest that are up for adoption.
+> * Log in to the app with you username and password, or create a new account.
+> * Click left or right to scroll through a gallery of pets that are up for adoption.
 > * See 0 to 5 star ratings of the pets and other people's comments about them
 > * Give a 0 to 5 star rating of the pets and write your own comments about them.
 > * Click the link to be taken to the Petfinder.com website where you can adopt the selected pet.
