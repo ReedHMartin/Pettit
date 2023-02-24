@@ -1,19 +1,19 @@
 [
   {
     "comment": "What a good dog!",
-    "rating": 3,
+    "rating": true,
     "user_id": 2,
     "animal_id": 1
   },
   {
     "comment": "This dog seems great!",
-    "rating": 5,
+    "rating": true,
     "user_id": 3,
     "animal_id": 2
   },
   {
-    "comment": "Carl looks like he hurts people",
-    "rating": 1,
+    "comment": "Carla looks like she hurts people",
+    "rating": false,
     "user_id": 1,
     "animal_id": 3
   }

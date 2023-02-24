@@ -6,24 +6,24 @@ class Breed extends Model {}
 
 Breed.init(
   {
-   id:{
+   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true
    },
-   breed_name:{
+   breed_name: {
     type: DataTypes.STRING,
     allowNull: false,
-   }
-   animal_id:{
+   },
+   animal_id: {
     type: DataTypes.INTEGER,
     references: {
         model: 'Animal',
         key: 'id',
    }
   },
-}
+},
   {
     sequelize,
     timestamps: false,

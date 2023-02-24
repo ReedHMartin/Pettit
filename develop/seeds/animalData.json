@@ -1,18 +1,29 @@
 [
-    {
-      "name": "Lucky",
-      "description": "Happy boi who loves snacks",
-      "breed_id": 1
-    },
-    {
-        "name": "Spot",
-        "description": "Great listener and loves cuddles",
-        "breed_id": 2
-      },
-      {
-        "name": "Carl",
-        "description": "Carl likes to bite.",
-        "breed_id": 3
-      }
-  ]
-  
+  {
+    "name": "Lucky",
+    "url": "www.google.com",
+    "species": "dog",
+    "age": "adult",
+    "gender": "male",
+    "size": "large",
+    "description": "Happy boi who loves snacks"
+  },
+  {
+    "name": "Spot",
+    "url": "www.google.com",
+    "species": "dog",
+    "age": "adult",
+    "gender": "male",
+    "size": "medium",
+    "description": "Great listener and loves cuddles"
+  },
+  {
+    "name": "Carla",
+    "url": "www.google.com",
+    "species": "dog",
+    "age": "adult",
+    "gender": "female",
+    "size": "small",
+    "description": "Carla likes to bite."
+  }
+]

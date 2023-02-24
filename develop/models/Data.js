@@ -16,7 +16,7 @@ Data.init(
         type: DataTypes.STRING,
      },
      rating: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BOOLEAN,
      },
      user_id:{
        type: DataTypes.INTEGER,

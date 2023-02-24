@@ -3,12 +3,12 @@ const Animal = require('./Animal');
 const Data = require('./Data');
 const Breed = require('./Breed')
 
-Animal.belongsTo(Breed, {
+Breed.belongsTo(Animal, {
   foreignKey: 'animal_id'
 })
 
-Breed.hasMany(Animal, {
-  foreignKey: 'breed_id',
+Animal.hasOne(Breed, {
+  foreignKey: 'animal_id',
   onDelete: 'CASCADE'
 })
 
