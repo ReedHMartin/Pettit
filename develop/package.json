@@ -1,16 +1,18 @@
 {
-  "name": "crowd-funding",
+  "name": "pettit",
   "version": "1.0.0",
-  "description": "",
+  "description": "animal rating project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "test": "run test",
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reedhmartin/pettit.git"
+  },
+  "author": "cody, james, reed, tom",
+  "license": "MIT",
   "dependencies": {
     "@petfinder/petfinder-js": "^1.0.6",
     "bcrypt": "^5.0.0",
@@ -22,9 +24,8 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.1.2"
-  }
+  "bugs": {
+    "url": "https://github.com/reedhmartin/pettit/issues"
+  },
+  "homepage": "https://github.com/reedhmartin/pettit#readme"
 }
