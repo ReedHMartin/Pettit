@@ -1,30 +1,44 @@
-const User = require('./User');
-const Animal = require('./Animal');
-const Data = require('./Data');
-const Breed = require('./Breed')
+const User = require("./User");
+const Animal = require("./Animal");
+const Rating = require("./Data");
 
-Animal.belongsTo(Breed, {
-  foreignKey: 'animal_id'
-})
 
-Breed.hasMany(Animal, {
-  foreignKey: 'breed_id',
-  onDelete: 'CASCADE'
-})
-
-Animal.belongsToMany(User, {
-  through: Data,
-  foreignKey: 'animal_id'
+Rating.belongsTo(Animal, {
+  foreginKey:"animal_id"
 });
 
-User.belongsToMany(Animal, {
-  through: Data,
-  foreignKey: 'user_id',
+Animal.hasMany(Rating, {
+  foreignKey:"animal_id"
 });
+
+User.hasMany(Rating, {
+  foreignKey: "user_id",
+});
+
+Rating.blongsTo(User,{
+  foriiegnKey: "user_id"
+});
+
+Animal.belongsToMany(Users, {
+  through: {
+    model:Rating,
+    unique: true
+  }
+  as:"user_animals"
+});
+
+Users.belongsToMany(Animals, {
+  through: {
+    model:Rating,
+    unique: true
+  }
+  as:"animal_users"
+});
+  
+
 
 module.exports = { 
   User, 
   Animal, 
-  Data,
-  Breed
+  Rating
 };

@@ -9,8 +9,26 @@ Animal.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+	isUrl: true
+      }
+    },
+    species: {
+      type: DataTypes.STRONG,
+    },
+    age: {
+      type: DataTypes.INTEGER
+    },
+    geneder: {
+      type: DAtaTypes.STRING
+    },
+    size: {
+      type: DAtaTypes.STRING
+    },      
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -18,12 +36,15 @@ Animal.init(
     description: {
       type: DataTypes.STRING,
     },
-    breed_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Breed',
-        key: 'id',
-      },
+    status: {
+            type: DAtaTypes.STRING
+    },
+    picture: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+	isUrl: true
+      }
     },
   },
   {
@@ -31,7 +52,7 @@ Animal.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'animal',
+    modelName: "animal",
   }
 );
 
