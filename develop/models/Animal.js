@@ -18,16 +18,16 @@ Animal.init(
       }
     },
     species: {
-      type: DataTypes.STRONG,
+      type: DataTypes.STRING,
     },
     age: {
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     },
     geneder: {
-      type: DAtaTypes.STRING
+      type: DataTypes.STRING
     },
     size: {
-      type: DAtaTypes.STRING
+      type: DataTypes.STRING
     },      
     name: {
       type: DataTypes.STRING,
@@ -37,7 +37,7 @@ Animal.init(
       type: DataTypes.STRING,
     },
     status: {
-            type: DAtaTypes.STRING
+      type: DataTypes.STRING
     },
     picture: {
       type: DataTypes.STRING,

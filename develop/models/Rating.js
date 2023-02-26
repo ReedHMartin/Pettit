@@ -21,14 +21,14 @@ Rating.init(
      user_id:{
        type: DataTypes.INTEGER,
         references: {
-         model: 'User',
+         model: 'user',
            key: 'id',
         },
     },
     animal_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'Animal',
+            model: 'animal',
             key: 'id',
         },
     },
@@ -38,7 +38,7 @@ Rating.init(
      timestamps: false,
      freezeTableName: true,
      underscored: true,
-     modelName: "comment",
+     modelName: "rating",
    }
  );
 

@@ -1,6 +1,6 @@
 const User = require("./User");
 const Animal = require("./Animal");
-const Rating = require("./Data");
+const Rating = require("./Rating");
 
 
 Rating.belongsTo(Animal, {
@@ -15,23 +15,23 @@ User.hasMany(Rating, {
   foreignKey: "user_id",
 });
 
-Rating.blongsTo(User,{
+Rating.belongsTo(User,{
   foriiegnKey: "user_id"
 });
 
-Animal.belongsToMany(Users, {
+Animal.belongsToMany(User, {
   through: {
     model:Rating,
     unique: true
-  }
+  },
   as:"user_animals"
 });
 
-Users.belongsToMany(Animals, {
+User.belongsToMany(Animal, {
   through: {
     model:Rating,
     unique: true
-  }
+  },
   as:"animal_users"
 });
   

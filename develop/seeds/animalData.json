@@ -1,18 +1,98 @@
 [
-    {
-      "name": "Lucky",
-      "description": "Happy boi who loves snacks",
-      "breed_id": 1
-    },
-    {
-        "name": "Spot",
-        "description": "Great listener and loves cuddles",
-        "breed_id": 2
-      },
-      {
-        "name": "Carl",
-        "description": "Carl likes to bite.",
-        "breed_id": 3
-      }
-  ]
-  
+  {
+    "id": "60155417",
+    "url": "https://www.petfinder.com/dog/sebastian-60155417/pa/allentown/lucky-tails-inc-rescue-tx2498/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Dog",
+    "age": "Baby",
+    "gender": "Male",
+    "size": "Medium",
+    "name": "Sebastian",
+    "description": "Sebastian is a sweet active typical 9 week old puppy. He loves playing and going outside. He enjoys cuddles and...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155417/1/?bust=1677433259&width=300"
+  },
+  { 
+    "id": "60155416",
+    "url": "https://www.petfinder.com/cat/dotty-60155416/la/new-orleans/trap-dat-cat-la428/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Cat",
+    "age": "Adult",
+    "gender": "Female",
+    "size": "Medium",
+    "name": "Dotty",
+    "description": "Dotty is a very sweet retired mom looking for a quiet place to lay around and get fat. She was...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155416/5/?bust=1677433257&width=300"
+  },
+  { 
+    "id": "60155415",
+    "url": "https://www.petfinder.com/dog/sebastian-60155415/md/joppa/lucky-tails-inc-rescue-tx2498/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Dog",
+    "age": "Baby",
+    "gender": "Male",
+    "size": "Medium",
+    "name": "Sebastian",
+    "description": "Sebastian is a sweet active typical 9 week old puppy. He loves playing and going outside. He enjoys cuddles and...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155415/1/?bust=1677433236&width=300"
+  },
+  { 
+    "id": "60155411",
+    "url": "https://www.petfinder.com/cat/gaby-60155411/nc/ocean-isle-beach/cat-tails-nc341/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Cat",
+    "age": "Young",
+    "gender": "Female",
+    "size": "Medium",
+    "name": "Gaby",
+    "description": "Gaby is shy and likes to hide.  It&#039;s sometimes difficult to get your hands on her, but once you hold...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155411/1/?bust=1677433187&width=300"
+  },
+  { 
+    "id": 60155409,
+    "url": "https://www.petfinder.com/dog/devlin-60155409/ca/riverside/pawsitive-tails-to-remember-ca2577/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Dog",
+    "age": "Young",
+    "gender": "Male",
+    "size": "Small",
+    "name": "Devlin",
+    "description": "AVAILABLE NOW - Please fill out an application to start the process to meet DEVLIN. Meet and greets will be...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155409/2/?bust=1677433140&width=300"
+  },
+  { 
+    "id": 60155408,
+    "url": "https://www.petfinder.com/dog/diva-60155408/mo/saint-louis/st-louis-senior-dog-project-mo139/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Dog",
+    "age": "Young",
+    "gender": "Female",
+    "size": "Small",
+    "name": "Diva",
+    "description": "Our sweet Diva is ready for her forever home ! Diva is a six to 8  month old female spayed...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155408/1/?bust=1677433129&width=300"
+  },
+  { 
+    "id": 60155407,
+    "url": "https://www.petfinder.com/cat/mazie-courtesy-post-60155407/mi/utica/making-miracles-animal-rescue-aka-sanilac-scoopers-mi730/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Cat",
+    "age": "Adult",
+    "gender": "Female",
+    "size": "Small",
+    "name": "Mazie~ Courtesy Post",
+    "description": "6-8 year old Sweet MS. Mazie through no fault of her own is searching for her forever home.  She is...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155407/3/?bust=1677433069&width=300"
+  },
+  { 
+    "id": 60155405,
+    "url": "https://www.petfinder.com/dog/banjo-60155405/ca/tarzana/pawsitive-tails-to-remember-ca2577/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "species": "Dog",
+    "age": "Young",
+    "gender": "Male",
+    "size": "Small",
+    "name": "Banjo ",
+    "description": "Please fill out an application to start the process to meet BANJO.  Meet and greets will be held in TARZANA,...",
+    "status": "adoptable",
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155405/4/?bust=1677433041&width=300"
+  }
+    ]
