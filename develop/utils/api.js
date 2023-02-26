@@ -23,11 +23,12 @@ let getKeys = (object) => {
 	  size: object.size,
 	  name: object.name,
 	  description: object.description,
-	  status: object.status};
+	  status: object.status,
+	  picture: object.photos[0].medium };
 }
 
 // get the data for the api to present the user with
-let populateLanding = (species = "Dog") => {
+let populateLanding = (species = "Dog", ) => {
   return  (await client.animal.search(species)
 	   .then((res) => res["data"]["animals"].filter((entry) => entry["photos"].length > 0)))
     .forEach((animal) => getKeys(animal));
