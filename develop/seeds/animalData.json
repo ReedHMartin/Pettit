@@ -1,18 +1,18 @@
-[{
-
-    "id": "60155417",
-    "url": "https://www.petfinder.com/dog/sebastian-60155417/pa/allentown/lucky-tails-inc-rescue-tx2498/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+[
+  {
+    "api_id": "60155417",
+    "url": "https://www.petfinder.com/dog/sebastian-60155417/pa/allentown/lucky-tails-inc-rescue-tx2498/?referrer_api_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Dog",
     "age": "Baby",
     "gender": "Male",
     "size": "Medium",
     "name": "Sebastian",
-    "description": "Sebastian is a sweet active typical 9 week old puppy. He loves playing and going outside. He enjoys cuddles and...",
+    "description": "Sebastian is a sweet active typical 9 week old puppy. He loves playing and going outsapi_ide. He enjoys cuddles and...",
     "status": "adoptable",
-    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155417/1/?bust=1677433259&width=300"
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155417/1/?bust=1677433259&wapi_idth=300"
   },
   { 
-    "id": "60155416",
+    "api_id": "60155416",
     "url": "https://www.petfinder.com/cat/dotty-60155416/la/new-orleans/trap-dat-cat-la428/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Cat",
     "age": "Adult",
@@ -24,7 +24,7 @@
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155416/5/?bust=1677433257&width=300"
   },
   { 
-    "id": "60155415",
+    "api_id": "60155415",
     "url": "https://www.petfinder.com/dog/sebastian-60155415/md/joppa/lucky-tails-inc-rescue-tx2498/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Dog",
     "age": "Baby",
@@ -36,7 +36,7 @@
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155415/1/?bust=1677433236&width=300"
   },
   { 
-    "id": "60155411",
+    "api_id": "60155411",
     "url": "https://www.petfinder.com/cat/gaby-60155411/nc/ocean-isle-beach/cat-tails-nc341/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Cat",
     "age": "Young",
@@ -48,7 +48,7 @@
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155411/1/?bust=1677433187&width=300"
   },
   { 
-    "id": "60155409",
+    "api_id": "60155409",
     "url": "https://www.petfinder.com/dog/devlin-60155409/ca/riverside/pawsitive-tails-to-remember-ca2577/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Dog",
     "age": "Young",
@@ -60,7 +60,7 @@
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155409/2/?bust=1677433140&width=300"
   },
   { 
-    "id": "60155408",
+    "api_id": "60155408",
     "url": "https://www.petfinder.com/dog/diva-60155408/mo/saint-louis/st-louis-senior-dog-project-mo139/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Dog",
     "age": "Young",
@@ -72,7 +72,7 @@
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155408/1/?bust=1677433129&width=300"
   },
   { 
-    "id": "60155407",
+    "api_id": "60155407",
     "url": "https://www.petfinder.com/cat/mazie-courtesy-post-60155407/mi/utica/making-miracles-animal-rescue-aka-sanilac-scoopers-mi730/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Cat",
     "age": "Adult",
@@ -84,7 +84,7 @@
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155407/3/?bust=1677433069&width=300"
   },
   { 
-    "id": "60155405",
+    "api_id": "60155405",
     "url": "https://www.petfinder.com/dog/banjo-60155405/ca/tarzana/pawsitive-tails-to-remember-ca2577/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Dog",
     "age": "Young",
@@ -95,4 +95,4 @@
     "status": "adoptable",
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155405/4/?bust=1677433041&width=300"
   }
-    ]
+]

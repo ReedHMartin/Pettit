@@ -28,16 +28,11 @@ const seedDatabase = async () => {
       });
     }
     
-
-  for (const rating of ratingData) {
-    await Rating.create({
-      ...rating,
-    });
-  }
+    
   } catch (err) {
     console.log(err);
   }
-
+  
 
   process.exit(0);
 }
