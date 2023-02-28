@@ -9,29 +9,42 @@ Animal.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     url: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+	isUrl: true
+      }
     },
     species: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     age: {
       type: DataTypes.STRING
     },
-    gender: {
+    geneder: {
       type: DataTypes.STRING
     },
     size: {
       type: DataTypes.STRING
+    },      
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
+    },
+    status: {
+      type: DataTypes.STRING
+    },
+    picture: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+	isUrl: true
+      }
     },
   },
   {
@@ -39,7 +52,7 @@ Animal.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'animal',
+    modelName: "animal",
   }
 );
 

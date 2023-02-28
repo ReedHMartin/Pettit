@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
-class Data extends Model {}
 
-Data.init(
+class Rating extends Model {}
+
+Rating.init(
  {
      id: {
        type: DataTypes.INTEGER,
@@ -16,19 +16,19 @@ Data.init(
         type: DataTypes.STRING,
      },
      rating: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.INTEGER,
      },
      user_id:{
        type: DataTypes.INTEGER,
         references: {
-         model: 'User',
+         model: 'user',
            key: 'id',
         },
     },
     animal_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'Animal',
+            model: 'animal',
             key: 'id',
         },
     },
@@ -38,8 +38,8 @@ Data.init(
      timestamps: false,
      freezeTableName: true,
      underscored: true,
-     modelName: 'data',
+     modelName: "rating",
    }
  );
 
-module.exports = Data;
+module.exports = Rating;
