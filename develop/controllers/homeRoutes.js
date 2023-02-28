@@ -29,7 +29,7 @@ router.get('/animal/:id', async (req, res) => {
     const animalData = await Animal.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: animal,
           attributes: ['name'],
         },
       ],
@@ -52,7 +52,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Animal }],
+      include: [{ model: Animal },{model: Rating}],
     });
 
     const user = userData.get({ plain: true });

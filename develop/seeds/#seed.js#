@@ -29,7 +29,7 @@ const seedDatabase = async () => {
     }
     
   } catch (err) {
-    consolele
+    console.log(err);
   }
    process.exit(0);
 }
