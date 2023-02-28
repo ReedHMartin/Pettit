@@ -1,3 +1,4 @@
+
 const sequelize = require('../config/connection');
 const { User, Rating, Animal } = require('../models');
 
@@ -8,10 +9,12 @@ const animalData = require("./animalData.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  try {
+    // Create animals with associated breed and user data
+    await Animal.bulkCreate(animalData);
+    // Create users
+    await User.bulkCreate(userData);
+
 
   for (const animal of animalData) {
     await Animal.create({
@@ -24,7 +27,7 @@ const seedDatabase = async () => {
       ...rating,
     });
   }
-
+  }
   process.exit(0);
 };
 

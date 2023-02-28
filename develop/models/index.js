@@ -12,12 +12,12 @@ Animal.hasMany(Rating, {
 });
 
 User.hasMany(Rating, {
-  foreignKey: "user_id",
-});
+  foreignKey: "user_id"
+})
 
-Rating.belongsTo(User,{
-  foriiegnKey: "user_id"
-});
+Rating.belongsTo(User, {
+  foreignKey: "user_id"
+})
 
 Animal.belongsToMany(User, {
   through: {
@@ -34,8 +34,6 @@ User.belongsToMany(Animal, {
   },
   as:"animal_users"
 });
-  
-
 
 module.exports = { 
   User, 
