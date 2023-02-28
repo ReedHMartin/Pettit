@@ -27,8 +27,13 @@ const seedDatabase = async () => {
       ...rating,
     });
   }
-  }
+
+} catch (err){
+  console.log(err)
+}
+  
   process.exit(0);
-};
+}
+
 
 seedDatabase();
