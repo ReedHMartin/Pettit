@@ -12,7 +12,7 @@ Animal.init(
       primaryKey: true,
     },
     api_id: {
-      type: DAtaTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     url: {

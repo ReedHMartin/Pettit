@@ -28,9 +28,19 @@ const seedDatabase = async () => {
       });
     }
     
-  } catch (err) {
-    consolele
+
+  for (const rating of ratingData) {
+    await Rating.create({
+      ...rating,
+    });
   }
-   process.exit(0);
+  } catch (err) {
+    console.log(err);
+  }
+
+
+  process.exit(0);
 }
+
+
 seedDatabase();
