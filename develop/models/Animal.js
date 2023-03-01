@@ -7,9 +7,9 @@ Animal.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
     },
     api_id: {
       type: DataTypes.INTEGER,

@@ -1,15 +1,15 @@
-[{
-
+[
+  {
     "api_id": "60155417",
-    "url": "https://www.petfinder.com/dog/sebastian-60155417/pa/allentown/lucky-tails-inc-rescue-tx2498/?referrer_id=ce611338-360f-46e2-a983-0e09dfa6e523",
+    "url": "https://www.petfinder.com/dog/sebastian-60155417/pa/allentown/lucky-tails-inc-rescue-tx2498/?referrer_api_id=ce611338-360f-46e2-a983-0e09dfa6e523",
     "species": "Dog",
     "age": "Baby",
     "gender": "Male",
     "size": "Medium",
     "name": "Sebastian",
-    "description": "Sebastian is a sweet active typical 9 week old puppy. He loves playing and going outside. He enjoys cuddles and...",
+    "description": "Sebastian is a sweet active typical 9 week old puppy. He loves playing and going outsapi_ide. He enjoys cuddles and...",
     "status": "adoptable",
-    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155417/1/?bust=1677433259&width=300"
+    "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155417/1/?bust=1677433259&wapi_idth=300"
   },
   { 
     "api_id": "60155416",
@@ -95,4 +95,4 @@
     "status": "adoptable",
     "picture": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60155405/4/?bust=1677433041&width=300"
   }
-    ]
+]
