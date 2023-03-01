@@ -28,7 +28,7 @@ Animal.init(
     age: {
       type: DataTypes.STRING
     },
-    geneder: {
+    gender: {
       type: DataTypes.STRING
     },
     size: {
