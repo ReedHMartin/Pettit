@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Aniamal, Rating, User } = require('../models');
+const { Animal, Rating, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 	{model:Rating}
       ],
     }).catch((err) => res.json(err));
-    console.log("Aniaml");
+    console.log("Animal");
     // Serialize data so the template can read it
     const animals = animalData.map((animal) => animal.get({ plain: true }));
 
@@ -27,10 +27,10 @@ router.get('/', async (req, res) => {
 router.get('/animal/:id', async (req, res) => {
   try {
     const animalData = await Animal.findByPk(req.params.id, {
-      include: [
+      exclude: [
         {
           model: animal,
-          attributes: ['name'],
+          attributes: ['id', 'api_id'],
         },
       ],
     });

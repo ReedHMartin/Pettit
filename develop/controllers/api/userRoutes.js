@@ -1,5 +1,19 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Rating } = require('../../models');
+const withAuth = require('../../utils/auth');
+
+router.get("/:id", (req, res) => {
+  User.findByPk(req.params.id, {
+    include: [Rating],
+  })
+    .then((userData) => {
+      res.status(200).json(userData);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+});
+
 
 router.post('/', async (req, res) => {
   try {
@@ -56,6 +70,18 @@ router.post('/logout', (req, res) => {
   } else {
     res.status(404).end();
   }
+});
+
+router.delete("/:id", (req, res) => {
+  User.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedUser) => {
+      res.json(deletedUser);
+    })
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
