@@ -1,9 +1,11 @@
+// Importing necessary modules
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-
+// Creating Rating class that extends Model
 class Rating extends Model {}
 
+// Initializing Rating model with necessary properties
 Rating.init(
  {
      id: {
@@ -42,4 +44,5 @@ Rating.init(
    }
  );
 
+// Exporting Rating model
 module.exports = Rating;

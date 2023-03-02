@@ -1,7 +1,9 @@
+// Import necessary modules
 const router = require('express').Router();
 const { Animal } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Route for getting all animals
 router.get("/", (req, res) => {
   Animal.findAll()
     .then((userData) => {
@@ -12,6 +14,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// Route for getting a single animal by ID
 router.get("/:id", (req, res) => {
   Animal.findByPk(req.params.id, 
     {include: [Rating],}
@@ -24,6 +27,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Route for creating a new animal
 router.post("/", (req, res) => {
   Animal.create(req.body)
     .then((newAnimal) => {
@@ -34,6 +38,7 @@ router.post("/", (req, res) => {
     });
 });
 
+// Route for updating an animal by ID
 router.put("/:id", (req, res) => {
   Animal.update(req.body, {
     where: {
@@ -48,4 +53,5 @@ router.put("/:id", (req, res) => {
     });
 });
 
+// Export router for use in other modules
 module.exports = router;

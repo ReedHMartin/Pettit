@@ -1,7 +1,9 @@
+  // Import dependencies
 const router = require('express').Router();
 const { Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Route to get all ratings
 router.get("/", withAuth, (req, res) => {
     Rating.findAll()
       .then((userData) => {
@@ -10,9 +12,10 @@ router.get("/", withAuth, (req, res) => {
       .catch((err) => {
         res.status(400).json(err);
       });
-  });
-  
-  router.get("/:id", withAuth, (req, res) => {
+});
+
+// Route to get rating by id
+router.get("/:id", withAuth, (req, res) => {
     Rating.findByPk(req.params.id)
       .then((userData) => {
         res.status(200).json(userData);
@@ -20,17 +23,19 @@ router.get("/", withAuth, (req, res) => {
       .catch((err) => {
         res.status(400).json(err);
       });
-  });
-  
-  router.post("/", withAuth, (req, res) => {
+});
+
+// Route to create new rating
+router.post("/", withAuth, (req, res) => {
     const newRating = Rating.create({
         ...req.body,
         user_id: req.session.user_id,
     })
     res.json(newRating)
 })
-   
-  router.delete("/:id", withAuth, (req, res) => {
+
+// Route to delete rating by id
+router.delete("/:id", withAuth, (req, res) => {
     Rating.destroy({
       where: {
         id: req.params.id,
@@ -40,7 +45,7 @@ router.get("/", withAuth, (req, res) => {
         res.json(deletedRating);
       })
       .catch((err) => res.json(err));
-  });
-  
-  module.exports = router;
-  
+});
+
+// Export router
+module.exports = router;
