@@ -1,7 +1,9 @@
+// Import required modules and models
 const router = require('express').Router();
 const { User, Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Endpoint to retrieve a specific user and their associated ratings
 router.get("/:id", (req, res) => {
   User.findByPk(req.params.id, {
     include: [Rating],
@@ -14,11 +16,12 @@ router.get("/:id", (req, res) => {
     });
 });
 
-
+// Endpoint to create a new user
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
+    // Save the user's session information and send a response with the user data
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -30,10 +33,12 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Endpoint to log in a user
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
+    // Check if the user exists
     if (!userData) {
       res
         .status(400)
@@ -41,6 +46,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // Check if the password is valid
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -50,6 +56,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // Save the user's session information and send a response with the user data
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -62,8 +69,10 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Endpoint to log out a user
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
+    // Destroy the user's session and send a response with a 204 status code
     req.session.destroy(() => {
       res.status(204).end();
     });
@@ -72,6 +81,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// Endpoint to delete a specific user
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: {
@@ -84,4 +94,5 @@ router.delete("/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
+// Export the router
 module.exports = router;
