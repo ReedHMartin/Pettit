@@ -4,7 +4,7 @@ const { Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Route to get all ratings
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
     Rating.findAll()
       .then((userData) => {
         res.status(200).json(userData);

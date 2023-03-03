@@ -37,16 +37,17 @@ router.get('/animal/:id', async (req, res) => {
   try {
     // Find a single animal by its ID
     const animalData = await Animal.findByPk(req.params.id, {
-      exclude: [
+      include: [
         {
-          // model: Animal, // Exclude the Animal model
-          attributes: ['id', 'api_id'], // Exclude these specific attributes
+          model: Rating, // Exclude the Animal model
+          // attributes: ['id', 'api_id'], // Exclude these specific attributes
         },
       ],
     });
 
     // Convert the data to plain JS object
     const animal = animalData.get({ plain: true });
+    console.log(animal)
 
     // Render the animal page with animal data and session flag
     res.render('animal', {
@@ -86,7 +87,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 
