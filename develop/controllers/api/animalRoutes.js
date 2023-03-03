@@ -1,6 +1,6 @@
 // Import necessary modules
 const router = require('express').Router();
-const { Animal } = require('../../models');
+const { Animal, Rating, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Route for getting all animals

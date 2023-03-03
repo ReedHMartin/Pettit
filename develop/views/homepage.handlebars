@@ -1,25 +1,20 @@
 <!-- Loop over each object in the animals array -->
 {{#each animals as |animal|}}
   <div class="row mb-4 animal">
-    <div class="col-md-5">
+    <div class="col s12 m5">
       <h2>
-        <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-        {{{get_emoji}}}
         <a href="/animal/{{animal.id}}">{{animal.name}}</a>
       </h2>
       <p>
-        <span for="img" aria-label="money">💲</span>
-        <!-- Pass needed_funding value to the helper function -->
         <span>{{
             animal.species
           }}</span>
-        needed!
       </p>
       <p>Created by
         {{animal.user.name}}
        </p>
     </div>
-    <div class="col-md-7">
+    <div class="col s12 m7">
       <p>
         {{animal.description}}
       </p>
