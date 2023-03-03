@@ -39,7 +39,7 @@ router.get('/animal/:id', async (req, res) => {
     const animalData = await Animal.findByPk(req.params.id, {
       exclude: [
         {
-          model: animal, // Exclude the Animal model
+          // model: Animal, // Exclude the Animal model
           attributes: ['id', 'api_id'], // Exclude these specific attributes
         },
       ],
