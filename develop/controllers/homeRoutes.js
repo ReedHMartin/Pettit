@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 });
 
 // Route for individual animal page
-router.get('/animal/:id', async (req, res) => {
+router.get('/animal/:id',withAuth, async (req, res) => {
   try {
     // Find a single animal by its ID
     const animalData = await Animal.findByPk(req.params.id, {
