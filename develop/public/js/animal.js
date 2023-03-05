@@ -4,8 +4,11 @@ let user_id = userInfo.getAttribute("data-id");
 let URL = (window.location.href).split("/");
 let animal_id = URL[URL.length-1];
 
+let forwardBtn = document.querySelector("#forward");
+let backBtn = document.querySelector("#back");
 
-const addComment = async () => {
+
+const addComment = async (event) => {
   let comment = document.querySelector("#comment").value.trim()
 
   try {
@@ -34,5 +37,27 @@ const addComment = async () => {
 }
 
 
+const backAnimal = (event) => {
+  
+  URL.pop();
+  URL.push(--animal_id);
+
+  document.location.replace(URL.join("/"));
+}
+
+const forwardAnimal = (event) => {
+
+  URL.pop();
+  URL.push(++animal_id);
+  console.log(URL)
+
+  document.location.replace(URL.join("/"));
+
+  
+}
+
+
 commentButton.addEventListener('click', addComment)
 
+forwardBtn.addEventListener("click",forwardAnimal);
+backBtn.addEventListener("click",backAnimal);
