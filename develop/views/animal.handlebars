@@ -1,47 +1,49 @@
 
-
 <div>
-          <div class="row">
-            <div class="col s12 m6 l3 pull-l2">
-              <div class="center-align">
-                <h2>Pet Info</h2>
-                <span class="card-title" id="name" data-id="{{id}}">{{name}}</span>
-                    <p>{{description}}</p>
-                    <p>{{age}}</p>
-                    <p>{{gender}}</p>
-                    <p>{{size}}</p>
-                    <p>{{status}}</p>
-              </div>
-            </div>
-
-            <div class="col s12 m6 l3 push-l7">
-                <div class="center-align">
-                  <h2>Comments</h2>
-                  <ul>
-                  {{#each ratings as |rating|}}
-                  <li>{{rating.comment}}</li>
-                  {{/each}}
-                  </ul>
-                </div>
-              </div>
-
-            <div class="card-panel hoverable col s12 m12 l6 pull-l3">
-              <a href="{{url}}" target="_blank">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="{{picture}}" />
-                  </div>
-                  <div class="card-content">
-                  </div>
-                </div>
-              </a>
-            </div>
-            
+  <div class="row">
+    <div class="col s12 m6 l3 pull-l2">
+      <div class="center-align">
+        <h2>Pet Info</h2>
+	
+        <p>{{description}}</p>
+        <p>{{age}}</p>
+        <p>{{gender}}</p>
+        <p>{{size}}</p>
+        <p>{{status}}</p>
+      </div>
+    </div>
+    
+    <div class="col s12 m6 l3 push-l7">
+      <div class="center-align">
+        <h2>Comments</h2>
+        <ul>
+          {{#each ratings as |rating|}}
+          <li>{{rating.comment}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="card-panel hoverable col s12 m12 l6 pull-l3">
+      <a href="{{url}}" target="_blank">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{picture}}"/>
           </div>
-        </div>
+      </a>
+      <div class="card-content">
+	<p class="animal-name">{{name}}</p>
+      </div>
+      </div>
+      <a class="waves-effect waves-light btn-large"><i class="material-icons left">arrow_back</i>Previous</a>
+      <a class="waves-effect waves-light btn-large"><i class="material-icons right">arrow_forwardk</i>Next</a>
+    </div>    
+  </div>
+</div>
 <div class="col s12 m12 l6 pull-l3">
+  
   <label for="comment">Comment:</label>
-  <textarea name="comment" id="comment" cols="30" rows="10" data-id="{{user_id}}">Write Your Comment Here!</textarea>
+  <textarea name="comment" id="comment" cols="30" rows="10">Write Your Comment Here!</textarea>
   <button class="commentButton" type="button">ADD COMMENT</button>
 </div>
 
