@@ -4,7 +4,7 @@ const { User, Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Endpoint to retrieve a specific user and their associated ratings
-router.get("/:id", (req, res) => {
+router.get("/:id",withAuth, (req, res) => {
   User.findByPk(req.params.id, {
     include: [Rating],
   })
@@ -17,7 +17,7 @@ router.get("/:id", (req, res) => {
 });
 
 // Endpoint to create a new user
-router.post('/', async (req, res) => {
+router.post('/',withAuth, async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -82,7 +82,7 @@ router.post('/logout', (req, res) => {
 });
 
 // Endpoint to delete a specific user
-router.delete("/:id", (req, res) => {
+router.delete("/:id",withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id,
