@@ -9,7 +9,7 @@ const loginFormHandler = async (event) => {
   // Check if email and password fields are not empty
   if (email && password) {
     // Send a POST request to the API endpoint with the login data
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/user/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
   // Check if all fields are not empty
   if (name && email && password) {
     // Send a POST request to the API endpoint with the signup data
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/user', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -47,7 +47,8 @@ const signupFormHandler = async (event) => {
     // Check if the response is OK (status code 200-299)
     if (response.ok) {
       // If successful, redirect the browser to the user's profile page
-      document.location.replace('/profile');
+      //      document.location.replace('/profile');
+      document.locaiton.replace("/");
     } else {
       // If the response status is not OK, show an error message
       alert(response.statusText);

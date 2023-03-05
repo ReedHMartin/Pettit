@@ -4,7 +4,7 @@ const { Animal, Rating, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Route for getting all animals
-router.get("/", (req, res) => {
+router.get("/", withAuth,(req, res) => {
   Animal.findAll()
     .then((userData) => {
       res.status(200).json(userData);
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 });
 
 // Route for getting a single animal by ID
-router.get("/:id", (req, res) => {
+router.get("/:id",withAuth, (req, res) => {
   Animal.findByPk(req.params.id, 
     {include: [Rating],}
   )
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
 });
 
 // Route for creating a new animal
-router.post("/", (req, res) => {
+router.post("/",withAuth, (req, res) => {
   Animal.create(req.body)
     .then((newAnimal) => {
       res.status(200).json(newAnimal);
@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
 });
 
 // Route for updating an animal by ID
-router.put("/:id", (req, res) => {
+router.put("/:id",withAuth, (req, res) => {
   Animal.update(req.body, {
     where: {
       id: req.params.id

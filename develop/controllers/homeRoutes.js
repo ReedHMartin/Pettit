@@ -48,11 +48,12 @@ router.get('/animal/:id', async (req, res) => {
     // Convert the data to plain JS object
     const animal = animalData.get({ plain: true });
     console.log(animal)
-
+    
     // Render the animal page with animal data and session flag
     res.render('animal', {
       ...animal,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
     });
   } catch (err) {
     // Handle server error
