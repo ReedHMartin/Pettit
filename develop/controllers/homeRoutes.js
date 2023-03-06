@@ -29,6 +29,26 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get("/count",  async (req,res) => {
+  try {
+    console.log("in the count");
+    
+    const animalData = await Animal.findAndCountAll({
+      
+    });
+
+    res.status(200).json(animalData)
+//    return animalData["count"];
+    
+  } catch (err) {
+    console.log("count");
+    res.status(400).json(err);
+  }
+ 
+});
+
+
+
 // Route for individual animal page
 router.get('/animal/:id',withAuth, async (req, res) => {
   try {

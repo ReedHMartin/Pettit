@@ -27,6 +27,26 @@ router.get("/:id",withAuth, (req, res) => {
     });
 });
 
+router.get("/count",  async (req,res) => {
+  console.log("in the count");
+  try {
+    
+    const animalData = await Animal.findAndCountAll({
+      
+    });
+
+    console.log("Aniaml:",animalData);
+    res.status(200).json(animalData)
+    //return animalData["count"];
+    
+  } catch (err) {
+    console.log("count");
+    res.status(400).json(err);
+  }
+ 
+});
+
+
 // Route for creating a new animal
 router.post("/",withAuth, (req, res) => {
   Animal.create(req.body)

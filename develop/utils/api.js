@@ -28,8 +28,8 @@ let getKeys = (object) => {
 }
 
 // get the data for the api to present the user with
-let populateLanding = (species = "Dog" ) => {
-  return  (await client.animal.search(species)
+let populate = (page = 1) => {
+  return  (await client.animal.search({page})
 	   .then((res) => res["data"]["animals"].filter((entry) => entry["photos"].length > 0)))
     .forEach((animal) => getKeys(animal));
 
@@ -37,5 +37,5 @@ let populateLanding = (species = "Dog" ) => {
 
 module.exports = {
   getKeys,
-  populateLading
+  populate
 }
