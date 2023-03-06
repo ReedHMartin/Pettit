@@ -14,6 +14,27 @@ router.get("/", withAuth,(req, res) => {
     });
 });
 
+
+router.get("/count",  async (req,res) => {
+  console.log("in the count");
+  try {
+    
+    const animalData = await Animal.findAndCountAll({
+      
+    });
+
+//    console.log("Aniaml:",animalData);
+    res.status(200).json(animalData)
+    //return animalData["count"];
+    
+  } catch (err) {
+    console.log("count");
+    res.status(400).json(err);
+  }
+ 
+});
+
+
 // Route for getting a single animal by ID
 router.get("/:id",withAuth, (req, res) => {
   Animal.findByPk(req.params.id, 
@@ -25,25 +46,6 @@ router.get("/:id",withAuth, (req, res) => {
     .catch((err) => {
       res.status(400).json(err);
     });
-});
-
-router.get("/count",  async (req,res) => {
-  console.log("in the count");
-  try {
-    
-    const animalData = await Animal.findAndCountAll({
-      
-    });
-
-    console.log("Aniaml:",animalData);
-    res.status(200).json(animalData)
-    //return animalData["count"];
-    
-  } catch (err) {
-    console.log("count");
-    res.status(400).json(err);
-  }
- 
 });
 
 
