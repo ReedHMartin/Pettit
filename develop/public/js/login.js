@@ -14,7 +14,6 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
     // Check if the response is OK (status code 200-299)
     if (response.ok) {
       // If successful, redirect the browser to the user's profile page
