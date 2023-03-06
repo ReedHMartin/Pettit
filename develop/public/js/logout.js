@@ -1,14 +1,15 @@
 // Define a function to log out the user
 const logout = async () => {
   // Send a POST request to the API endpoint to log out the user
-  const response = await fetch('/api/users/logout', {
+  console.log("DOC",document.location);
+  const response = await fetch('/api/user/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });
 
   // If successful, redirect the browser to the homepage
   if (response.ok) {
-    document.location.replace('/');
+   document.location.replace('/');
   } else {
     // If not successful, display an error message
     alert(response.statusText);

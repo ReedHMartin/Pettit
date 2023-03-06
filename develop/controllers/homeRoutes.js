@@ -15,9 +15,6 @@ router.get('/', async (req, res) => {
       ],
     }).catch((err) => res.json(err)); // Catch and handle any errors
     
-    // Log the word "Animal"
-    console.log("Animal");
-
     // Serialize data so the template can read it
     const animals = animalData.map((animal) => animal.get({ plain: true }));
 
@@ -32,22 +29,40 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get("/count",  async (req,res) => {
+  try {
+    console.log("in the count");
+    
+    const animalData = await Animal.findAndCountAll({
+      
+    });
+
+    res.status(200).json(animalData)
+//    return animalData["count"];
+    
+  } catch (err) {
+    console.log("count");
+    res.status(400).json(err);
+  }
+ 
+});
+
+
+
 // Route for individual animal page
-router.get('/animal/:id', async (req, res) => {
+router.get('/animal/:id',withAuth, async (req, res) => {
   try {
     // Find a single animal by its ID
     const animalData = await Animal.findByPk(req.params.id, {
       include: [
         {
-          model: Rating, // Exclude the Animal model
-          // attributes: ['id', 'api_id'], // Exclude these specific attributes
+          model: Rating, // Include the Rating model
         },
       ],
     });
 
     // Convert the data to plain JS object
     const animal = animalData.get({ plain: true });
-    console.log(animal)
     
     // Render the animal page with animal data and session flag
     res.render('animal', {

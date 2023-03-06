@@ -2,10 +2,31 @@ let commentButton = document.querySelector(".commentButton")
 let userInfo = document.querySelector("#comment");
 let user_id = userInfo.getAttribute("data-id");
 let URL = (window.location.href).split("/");
-let animal_id = URL[URL.length-1];
+let animal_id = URL.pop();
+
+let forwardBtn = document.querySelector("#forward");
+let backwardBtn = document.querySelector("#backward");
 
 
-const addComment = async () => {
+const getCount = async () => {
+  try {
+    const count = await fetch("/count",
+			      {
+				method: "GET", 
+				headers: {
+				  "Content-Type": "application/json"
+				}	
+			      })
+    console.log("count:",count);
+    return count;
+    
+  } catch (err) {
+    console.log(err);
+  }
+  
+}
+
+const addComment = async (event) => {
   let comment = document.querySelector("#comment").value.trim()
 
   try {
@@ -19,7 +40,6 @@ const addComment = async () => {
 				     }
 				   });
       if (response.ok) {
-	console.log("RES is ok");
 	document.location.reload()
       }
       else {
@@ -29,10 +49,38 @@ const addComment = async () => {
   } catch (err) {
     console.log(err);
   }
-  console.log("button clicked")
 
+}
+
+
+const backwardAnimal = async (event) => {
+  event.preventDefault();
+  if (animal_id > 1) {
+    animal_id -= 1;
+  } else if (animal_id == 1) {
+    animal_id = 1;
+    let max = getCount();
+    console.log(max);
+  }
+  console.log(animal_id);
+  
+  URL.push(animal_id);
+  document.location.replace(URL.join("/"));
+  
+}
+
+const forwardAnimal = (event) => {
+  event.preventDefault();
+
+  URL.push(++animal_id);
+  
+  document.location.replace(URL.join("/"));
+
+  
 }
 
 
 commentButton.addEventListener('click', addComment)
 
+forwardBtn.addEventListener("click",forwardAnimal);
+backwardBtn.addEventListener("click",backwardAnimal);
