@@ -9,7 +9,6 @@ const logout = async () => {
 
   // If successful, redirect the browser to the homepage
   if (response.ok) {
-//    location.href="/";
    document.location.replace('/');
   } else {
     // If not successful, display an error message

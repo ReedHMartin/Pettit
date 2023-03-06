@@ -49,7 +49,9 @@ const forwardAnimal = (event) => {
 
   URL.pop();
   URL.push(++animal_id);
-
+  
+  if (URL.length === animal_id) {
+    
   document.location.replace(URL.join("/"));
 
   
