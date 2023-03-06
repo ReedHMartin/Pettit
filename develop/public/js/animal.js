@@ -10,16 +10,14 @@ let backwardBtn = document.querySelector("#backward");
 
 const getCount = async () => {
   try {
-    const count = await fetch("/count",
+    const count = await fetch("/api/animal/count",
 			      {
 				method: "GET", 
 				headers: {
 				  "Content-Type": "application/json"
 				}	
-			      })
-    console.log("count:",count);
-    return count;
-    
+			      });
+    return count.json();    
   } catch (err) {
     console.log(err);
   }
@@ -59,28 +57,26 @@ const backwardAnimal = async (event) => {
     animal_id -= 1;
   } else if (animal_id == 1) {
     animal_id = 1;
-    let max = getCount();
-    console.log(max);
+    let max = (await getCount())["count"];
+    animal_id = max;
   }
-  console.log(animal_id);
   
   URL.push(animal_id);
-  document.location.replace(URL.join("/"));
-  
+  document.location.replace(URL.join("/"));  
 }
 
 const forwardAnimal = (event) => {
   event.preventDefault();
-
+ 
   URL.push(++animal_id);
   
   document.location.replace(URL.join("/"));
 
   
+  
 }
 
 
 commentButton.addEventListener('click', addComment)
-
 forwardBtn.addEventListener("click",forwardAnimal);
 backwardBtn.addEventListener("click",backwardAnimal);
