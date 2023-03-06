@@ -7,7 +7,6 @@ let animal_id = URL.pop();
 let forwardBtn = document.querySelector("#forward");
 let backwardBtn = document.querySelector("#backward");
 
-
 const getCount = async () => {
   try {
     const count = await fetch("/api/animal/count",
@@ -65,15 +64,39 @@ const backwardAnimal = async (event) => {
   document.location.replace(URL.join("/"));  
 }
 
-const forwardAnimal = (event) => {
+const forwardAnimal = async (event) => {
   event.preventDefault();
- 
+
+  let max = (await getCount())["count"];
+
+  let page = window.localStorage.getItem("page")
+  console.log(page);
+  
+  if (animal_id == max){
+    console.log(animal_id);
+    if (!page) {
+      window.localStorage.setItem("page", 2)
+      page = window.localStorage.getItem("page")
+      console.log(page);
+    }
+    try{
+      const count = await fetch("/api/animal/add/"+page,
+				{
+				  method: "GET",
+				  headers: {
+				    "Content-Type": "application/json"
+				  }	
+				});
+    } catch (err) {
+      console.log(err);
+    }
+    
+  }
+  
   URL.push(++animal_id);
   
-  document.location.replace(URL.join("/"));
-
-  
-  
+ document.location.replace(URL.join("/"));
+ 
 }
 
 

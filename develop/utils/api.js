@@ -15,7 +15,7 @@ const client = new petfinder.Client({apiKey: process.env.API_KEY, secret: proces
 // }
 
 let getKeys = (object) => {
-  return {id: object.id,
+  return {api_id: object.id,
 	  url: object.url,
 	  species:object.species,
 	  age: object.age,
@@ -28,12 +28,13 @@ let getKeys = (object) => {
 }
 
 // get the data for the api to present the user with
-let populate = (page = 1) => {
-  return  (await client.animal.search({page})
-	   .then((res) => res["data"]["animals"].filter((entry) => entry["photos"].length > 0)))
-    .forEach((animal) => getKeys(animal));
-
+let populate = async (page = 1) => {
+  let res = await client.animal.search({page});
+  let animals = res["data"]["animals"].filter((entry) => entry["photos"].length > 0);
+  animals = animals.map((animal) => getKeys(animal));
+  return animals;
 }
+
 
 module.exports = {
   getKeys,
