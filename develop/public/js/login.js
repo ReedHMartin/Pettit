@@ -48,7 +48,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the user's profile page
       //      document.location.replace('/profile');
-      document.locaiton.replace("/");
+      document.location.replace("/");
     } else {
       // If the response status is not OK, show an error message
       alert(response.statusText);
