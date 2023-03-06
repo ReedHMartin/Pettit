@@ -2,6 +2,8 @@
 const router = require('express').Router();
 const { Animal, Rating, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const {getKeys, populate} = require("../../utils/api");
+
 
 // Route for getting all animals
 router.get("/", withAuth,(req, res) => {
@@ -16,16 +18,13 @@ router.get("/", withAuth,(req, res) => {
 
 
 router.get("/count",  async (req,res) => {
-  console.log("in the count");
   try {
     
     const animalData = await Animal.findAndCountAll({
       
     });
 
-//    console.log("Aniaml:",animalData);
     res.status(200).json(animalData)
-    //return animalData["count"];
     
   } catch (err) {
     console.log("count");
@@ -33,6 +32,22 @@ router.get("/count",  async (req,res) => {
   }
  
 });
+
+router.get("/add/:page",  async (req,res) => {
+  console.log("in the add");
+  try {
+    let moreAnimalData = await populate(req.params.page);
+    await Animal.bulkCreate(moreAnimalData);
+
+    res.status(200).json(moreAnimalData)
+    
+  } catch (err) {
+    console.error(err);
+    res.status(400).json(err);
+  }
+ 
+});
+
 
 
 // Route for getting a single animal by ID
