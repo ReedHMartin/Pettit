@@ -26,8 +26,8 @@ router.get("/:id", withAuth, (req, res) => {
 });
 
 // Route to create new rating
-router.post("/",withAuth, (req, res) => {
-    const newRating = Rating.create({
+router.post("/",withAuth, async (req, res) => {
+    const newRating = await Rating.create({
         ...req.body,
         user_id: req.session.user_id,
     })
