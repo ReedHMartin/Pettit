@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "run test",
-    "start": "node server.js",
-    "heroku-postbuild": "node seeds/seed"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
