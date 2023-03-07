@@ -38,7 +38,6 @@ router.get("/add/:page",  async (req,res) => {
   try {
     let moreAnimalData = await populate(req.params.page);
     await Animal.bulkCreate(moreAnimalData);
-
     res.status(200).json(moreAnimalData)
     
   } catch (err) {

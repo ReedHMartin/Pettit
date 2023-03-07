@@ -37,7 +37,7 @@ const addComment = async (event) => {
 				     }
 				   });
       if (response.ok) {
-	document.location.reload()
+	document.location.reload();
       }
       else {
 	alert("Failed to add comment")
