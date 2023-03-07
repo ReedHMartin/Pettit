@@ -14,11 +14,10 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
     // Check if the response is OK (status code 200-299)
     if (response.ok) {
       // If successful, redirect the browser to the user's profile page
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       // If the response status is not OK, show an error message
       alert(response.statusText);
@@ -48,7 +47,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the user's profile page
       //      document.location.replace('/profile');
-      document.locaiton.replace("/");
+      document.location.replace("/");
     } else {
       // If the response status is not OK, show an error message
       alert(response.statusText);

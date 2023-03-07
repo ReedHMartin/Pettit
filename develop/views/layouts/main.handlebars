@@ -7,42 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- calls fonts and materalize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-    {{!-- <link rel="stylesheet" href="./../../public/css/style.css"> --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Shantell+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Pet-it</title>
 </head>
 <body>
-        <header>
-          <h1 href="/" class="center-align">Pettit</h1>
 
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
+  <header>
+    <a href="/"><h1 class="center-align">Pettit</h1></a>   
+    <nav>
+      <div class="nav-wrapper">
+	<i class="medium material-icons brand-logo left">pets</i>      
+	<!-- Conditionally render login or logout links -->
+	<ul id="nav-mobile" class="right hide-on-med-and-down">
+	  {{#if logged_in}}
+	  <li ><a id="logout">Logout</a></li>
+	  {{else}}
+	  <li><a href="/login" id="login">Login</a></li>
+	  {{/if}}
+	</ul>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
     
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  </footer>
+</div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+<!-- Render script for logged in users only -->
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
